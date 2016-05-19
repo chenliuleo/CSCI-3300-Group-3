@@ -6,10 +6,10 @@ public class UIManager : MonoBehaviour
 {
     static public UIManager UM;
 
-    public bool player1 = false;
-    public bool player2 = false;
-    public bool player3 = false;
-    public bool player4 = false;
+    public static bool player1 = false;
+    public static bool player2 = false;
+    public static bool player3 = false;
+    public static bool player4 = false;
 
     private bool counter = false;
     private bool startScreen = true;
@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     //public static readonly float Hard = 300;
     //public static readonly float ExtremelyHard = 4000;
 
-    public float DiffLevel;
+//    public float DiffLevel;
 
     
 
@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
 
-        if (Application.loadedLevel == 1 && staged == false)
+        if (Application.loadedLevel == 2 && staged == false)
         {
             Stage();
             staged = true;
@@ -72,30 +72,30 @@ public class UIManager : MonoBehaviour
 
         if (startScreen == true)
         {      
-            if (Input.GetKey("z") == true)
-            {
-                DiffLevel = 0.5f;
-            }
-
-            if (Input.GetKey("x") == true)
-            {
-                DiffLevel = 1;
-            }
-
-            if (Input.GetKey("c") == true)
-            {
-                DiffLevel = 2;
-            }
-
-            if (Input.GetKey("v") == true)
-            {
-                DiffLevel = 3;
-            }
-
-            if (Input.GetKey("b") == true)
-            {
-                DiffLevel = 4;
-            }
+//            if (Input.GetKey("z") == true)
+//            {
+//                DiffLevels = 0.5f;
+//            }
+//
+//            if (Input.GetKey("x") == true)
+//            {
+//                DiffLevels = 1;
+//            }
+//
+//            if (Input.GetKey("c") == true)
+//            {
+//                DiffLevels = 2;
+//            }
+//
+//            if (Input.GetKey("v") == true)
+//            {
+//                DiffLevels = 3;
+//            }
+//
+//            if (Input.GetKey("b") == true)
+//            {
+//                DiffLevels = 4;
+//            }
 
             if (Input.GetKey("1") == true && player1 == false)
             {
@@ -181,9 +181,13 @@ public class UIManager : MonoBehaviour
 
     void OnEnable()
 	{
-
-		//InputDisable = false;
-	}
+        // playernumber =0;
+        //InputDisable = false;
+        player1 = false;
+        player2 = false;
+        player3 = false;
+        player4 = false;
+    }
     /*
 	public void Hero1()
 	{
